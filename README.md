@@ -1,5 +1,5 @@
 
-# UE1002 – Poplar Plantations Classification Uncertainty Analysis
+# Poplar Plantations Classification Uncertainty Analysis
 
 Geospatial analysis of poplar plantation classification performance in France using Sentinel-2 confidence rasters and LiDAR metrics.
 
@@ -9,41 +9,42 @@ Agro Toulouse (ENSAT) · Université Toulouse II – Jean Jaurès
 
 ---
 
-### 🌍 **Project Overview**
+## 🌍 **Project Overview**
 
-Este módulo consistiu em analisar a **incerteza de classificação de povoamentos de choupos (peupleraies)** no território francês, utilizando:
+This module focused on analysing the classification uncertainty of poplar plantations (*peupleraies*) across French territories, using:
 
-* Séries temporais de rasters de confiança (2017–2022) produzidos com o índice espectral PI;
-* Métricas estruturais LiDAR de alta resolução (Canopy Cover e PAI);
-* Dados vetoriais de parcelas agrícolas contendo idade e cultivares de cada plantação.
+- Time series of confidence rasters (2017–2022) produced with the PI spectral index;
+- High-resolution LiDAR structural metrics (Canopy Cover and PAI);
+- Vector data of agricultural parcels containing age and cultivar information for each plantation.
 
-O objetivo principal foi avaliar como a **probabilidade de classificação** varia em função:
+The main objective was to evaluate how classification probability varies as a function of:
 
-* da idade das plantações;
-* dos tipos de cultivares;
-* das métricas LiDAR, representando características estruturais.
-
----
-
-### 🧭 **Study Area & Data**
-
-* 4 departamentos franceses (47, 82, 73, 10) abrangendo 5 tiles Sentinel-2.
-* Dados Sentinel-2 (2017–2022), rasters de confiança (PI Index).
-* Métricas LiDAR IGN (2021–2023) em resolução de 10 m (CC, PAI).
-* Dados vetoriais contendo cultivares, datas de plantio e atributos derivados.
+- plantation age;
+- cultivar type;
+- LiDAR metrics representing structural characteristics.
 
 ---
 
-### 🧪 **Methodological Workflow**
+## 🧭 **Study Area & Data**
 
-A pipeline foi inteiramente desenvolvida em **Python 3.10**, usando Jupyter Notebooks e bibliotecas geoespaciais (GeoPandas, Rasterio, Dash, Plotly).
-Fluxo de trabalho em 5 etapas:
+- 4 French departments (47, 82, 73, 10) covering 5 Sentinel-2 tiles.
+- Sentinel-2 data (2017–2022), confidence rasters (PI Index).
+- IGN LiDAR metrics (2021–2023) at 10 m resolution (CC, PAI).
+- Vector data containing cultivars, planting dates, and derived attributes.
 
-1. **Cleaning & preparation** of vector data (`1_Nettoyage_gpkg.ipynb`)
-2. **Stacking, reprojection & clipping** of raster datasets (`2_Masquage_rasters.ipynb`)
-3. **Raster value extraction & spatial join** with vector data (`3_Extraction_valeurs.ipynb`)
-4. **Filtering & consistency checks** (dates, canopy thresholds) (`4_Filtrage_csv.ipynb`)
-5. **Statistical visualization** using box-notch plots and interactive Dash apps
+---
+
+## 🧪 **Methodological Workflow**
+
+The pipeline was entirely developed in Python 3.10, using Jupyter Notebooks and geospatial libraries (GeoPandas, Rasterio, Dash, Plotly).
+
+Workflow in 5 steps:
+
+1. Cleaning & preparation of vector data (`1_Nettoyage_gpkg.ipynb`)
+2. Stacking, reprojection & clipping of raster datasets (`2_Masquage_rasters.ipynb`)
+3. Raster value extraction & spatial join with vector data (`3_Extraction_valeurs.ipynb`)
+4. Filtering & consistency checks (dates, canopy thresholds) (`4_Filtrage_csv.ipynb`)
+5. Statistical visualization using box-notch plots and interactive Dash apps
 
 <p align="center">
   <img src="rapport/diagramme/diagramme_traitement.png" alt="Workflow diagram" width="500">
