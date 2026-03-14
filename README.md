@@ -1,6 +1,12 @@
 
 # Poplar Plantations Classification Uncertainty Analysis
 
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![GeoPandas](https://img.shields.io/badge/GeoPandas-139C5A?style=flat)
+![Rasterio](https://img.shields.io/badge/Rasterio-3776AB?style=flat)
+![Dash](https://img.shields.io/badge/Dash-008DE4?style=flat&logo=plotly&logoColor=white)
+![LiDAR](https://img.shields.io/badge/LiDAR-2E8B57?style=flat)
+
 Geospatial analysis of poplar plantation classification performance in France using Sentinel-2 confidence rasters and LiDAR metrics.
 
 📍 SIGMA Master – UE1002 “Atelier Géomatique”
