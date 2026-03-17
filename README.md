@@ -50,7 +50,7 @@ Main steps:
 5. Produce statistical visualizations and interactive dashboards.
 
 <p align="center">
-  <img src="rapport/diagramme/Chaine_Traitement_2025-01-15.png" alt="Workflow diagram" width="520">
+  <img src="rapport/diagramme/Chaine_Traitement.png" alt="Workflow diagram" width="520">
 </p>
 
 ---
