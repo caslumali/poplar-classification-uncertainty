@@ -1,10 +1,5 @@
 # Poplar Plantations Classification Uncertainty Analysis
 
-<<<<<<< HEAD
-Classification uncertainty analysis combining Sentinel-2 confidence rasters, LiDAR metrics, and statistical visualization for poplar plantations in France.
-=======
-# Poplar Plantations Classification Uncertainty Analysis
-
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![GeoPandas](https://img.shields.io/badge/GeoPandas-139C5A?style=flat)
 ![Rasterio](https://img.shields.io/badge/Rasterio-3776AB?style=flat)
