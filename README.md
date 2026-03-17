@@ -1,4 +1,8 @@
+# Poplar Plantations Classification Uncertainty Analysis
 
+<<<<<<< HEAD
+Classification uncertainty analysis combining Sentinel-2 confidence rasters, LiDAR metrics, and statistical visualization for poplar plantations in France.
+=======
 # Poplar Plantations Classification Uncertainty Analysis
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
@@ -11,10 +15,56 @@ Geospatial analysis of poplar plantation classification performance in France us
 
 📍 SIGMA Master – UE1002 “Atelier Géomatique”
 Agro Toulouse (ENSAT) · Université Toulouse II – Jean Jaurès
+>>>>>>> f1951e30b033d7f437b35005350d1edf0cba441c
 
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![GeoPandas](https://img.shields.io/badge/GeoPandas-139C5A?style=flat)
+![Rasterio](https://img.shields.io/badge/Rasterio-3776AB?style=flat)
+![Dash](https://img.shields.io/badge/Dash-008DE4?style=flat&logo=plotly&logoColor=white)
+![LiDAR](https://img.shields.io/badge/LiDAR-2E8B57?style=flat)
 
 ---
 
+<<<<<<< HEAD
+## Overview
+
+This repository contains a geospatial workflow for analysing the uncertainty of poplar plantation classification in France.
+
+The project combines:
+
+- Sentinel-2 confidence rasters from 2017 to 2022
+- LiDAR structural metrics such as canopy cover and PAI
+- vector parcel data with plantation age and cultivar information
+- statistical visualization and interactive exploration
+
+The main objective was to understand how classification confidence varies with plantation age, cultivar type, and structural characteristics derived from LiDAR.
+
+---
+
+## Study area and data
+
+The analysis covers four French departments across five Sentinel-2 tiles.
+
+Main data sources:
+
+- Sentinel-2 confidence rasters based on the PI spectral index
+- IGN LiDAR metrics at 10 m resolution
+- parcel-level vector data with cultivar, planting date, and derived attributes
+
+---
+
+## Workflow
+
+The pipeline was developed in Python using notebooks and geospatial libraries for raster and vector processing.
+
+Main steps:
+
+1. Clean and prepare vector parcel data.
+2. Reproject, clip, and align raster datasets.
+3. Extract raster values and join them to plantation polygons and pixel samples.
+4. Filter inconsistent observations and derive analysis tables.
+5. Produce statistical visualizations and interactive dashboards.
+=======
 ## 🌍 **Project Overview**
 
 This module focused on analysing the classification uncertainty of poplar plantations (*peupleraies*) across French territories, using:
@@ -51,69 +101,71 @@ Workflow in 5 steps:
 3. Raster value extraction & spatial join with vector data (`3_Extraction_valeurs.ipynb`)
 4. Filtering & consistency checks (dates, canopy thresholds) (`4_Filtrage_csv.ipynb`)
 5. Statistical visualization using box-notch plots and interactive Dash apps
+>>>>>>> f1951e30b033d7f437b35005350d1edf0cba441c
 
 <p align="center">
-  <img src="rapport/diagramme/diagramme_traitement.png" alt="Workflow diagram" width="500">
+  <img src="rapport/diagramme/Chaine_Traitement_2025-01-15.png" alt="Workflow diagram" width="520">
 </p>
 
 ---
 
-### 📈 **Key Analyses**
+## Key analyses
 
-* Temporal evolution of classification confidence by plantation age
-* Cultivar-specific uncertainty analysis
-* Correlation between LiDAR metrics and classification performance
-* Identification of minimum plantation age for reliable classification (~5 years)
+The repository documents several complementary analyses:
 
-All box-notch visualizations are available in the [`/results`](./results) folder:
+- temporal evolution of classification confidence by plantation age
+- cultivar-specific patterns of uncertainty
+- relationships between classification confidence and LiDAR metrics
+- combined age, confidence, and structure analysis
+- identification of the age threshold at which classification becomes more reliable
 
-* [Overall confidence vs age](./results/1_confidenceXage/Boxnotch_confidenceXage_all.pdf)
-* [Top cultivars confidence vs age](./results/1_confidenceXage/Boxnotch_confidenceXage_top_cultivars.pdf)
-* [Per year analysis](./results/2_confidenceXage_par_annee/Boxnotch_confidenceXage_par_annee.pdf)
-* [LiDAR metrics vs age](./results/3_lidar_metrics/Boxnotch_lidar_metrics_top_cultivars.pdf)
-* [Confidence & LiDAR combined](./results/4_confidenceXage_lidar_metrics/Boxnotch_confidenceXage_lidar_metrics_top_cultivars.pdf)
+Selected outputs are available in the [`results/`](./results) folder, including:
 
----
-
-### 🖥️ **Interactive Visualization**
-
-Two interactive Dash applications were developed:
-
-* `7_0_App_un_graphique.py` — single interactive plot explorer
-* `7_1_App_px_confidenceXage.py` — dual-plot comparison mode
-
-They allow cultivar selection, variable choice (X/Y), hover inspection and faceted temporal views.
+- overall confidence versus age
+- yearly confidence-versus-age comparisons
+- LiDAR metrics versus age
+- combined confidence and LiDAR visualizations
 
 ---
 
-### 📂 **Repository Structure**
+## Interactive tools
 
+The project also includes Dash applications for interactive exploration:
+
+- `7_0_App_un_graphique.py` for single-plot exploration
+- `7_1_App_px_confidenceXage.py` for comparing confidence and age relationships
+- `7_2_App_px_metriques_lidar.py` for exploring LiDAR-related indicators
+
+These apps support cultivar selection, variable comparison, and interactive inspection of temporal and structural patterns.
+
+---
+
+## Repository structure
+
+```text
+1002-703_Projet/
+|-- data_brut/      # Raw raster and vector data
+|-- data_final/     # Processed raster, vector, and tabular outputs
+|-- scripts/        # Notebooks, Python functions, and Dash apps
+|-- results/        # Statistical figures and exported analyses
+|-- rapport/        # Report material and workflow diagrams
+`-- README.md
 ```
-UE1002_Peupleraie/
-├── data_brut/                # Raw raster & vector datasets
-├── data_final/               # Preprocessed aligned data
-├── scripts/                  # Jupyter notebooks + Python functions
-├── results/                  # Boxnotch figures & analyses
-├── rapport/                  # Project report & diagrams
-└── README.md
-```
 
 ---
 
-### 🧠 **Key Skills & Tools**
+## Why this repository matters
 
-* 🛰 Sentinel-2 time series analysis
-* 🌳 LiDAR metrics integration (Canopy Cover, PAI)
-* 🐍 Python geospatial stack (GeoPandas, Rasterio, Plotly/Dash)
-* 📊 Box-notch visualization for statistical uncertainty analysis
-* 🗂 GIS data preparation, masking & spatial joins
+This repository shows:
 
----
-
-### 📚 **Reference**
-
-Based on the project report:
-
-> *Abir Ben Abdelghaffar, Lucas Lima, Naly Rakotoarindrazaka (2023). UE1002 – Analyse de l’incertitude de classification de peupleraies plantées.*
+- uncertainty analysis for remote-sensing classification outputs
+- integration of Sentinel-2 and LiDAR information
+- geospatial data preparation with Python
+- parcel- and pixel-level statistical analysis
+- interactive visualization of classification behaviour
 
 ---
+
+## Context
+
+This project was developed during the SIGMA MSc in France as part of the UE1002 geospatial workshop. It remains a strong example of applied geospatial analysis combining Earth observation, LiDAR, and statistical interpretation.
